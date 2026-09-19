@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@theme inline {
+    --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --background: #f7faf9;
+    --foreground: #17312e;
+}
+
+html[data-theme="dark"] {
+    --background: #101918;
+    --foreground: #e6f2ef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-white\/95,
+html[data-theme="dark"] .bg-white\/80,
+html[data-theme="dark"] .bg-white\/90 {
+    background-color: #182522;
+}
+
+html[data-theme="dark"] .bg-slate-50,
+html[data-theme="dark"] .bg-slate-50\/70,
+html[data-theme="dark"] .bg-slate-100 {
+    background-color: #14201e;
+}
+
+/* ── Landing navbar dark mode ─────────────────────────────────── */
+html[data-theme="dark"] .landing-navbar {
+    background-color: rgb(16 25 24 / 0.88);
+    border-color: #29403a;
+}
+
+html[data-theme="dark"] .landing-nav-links {
+    color: #a9c0bb;
+}
+
+html[data-theme="dark"] .landing-nav-links a:hover {
+    color: #5eead4;
+}
+
+html[data-theme="dark"] .landing-nav-btn {
+    border: 1px solid #29403a;
+    color: #e6f2ef;
+}
+
+html[data-theme="dark"] .landing-nav-btn:hover {
+    background-color: #233732;
+}
+
+html[data-theme="dark"] .landing-navbar .inline-flex[aria-label*="theme"] {
+    border-color: #29403a;
+    color: #a9c0bb;
+}
+
+html[data-theme="dark"] .landing-navbar .inline-flex[aria-label*="theme"]:hover {
+    background-color: #233732;
+    color: #5eead4;
+}
+
+html[data-theme="dark"] .text-slate-900,
+html[data-theme="dark"] .text-slate-800,
+html[data-theme="dark"] .text-slate-700 {
+    color: #e6f2ef;
+}
+
+html[data-theme="dark"] .text-slate-600,
+html[data-theme="dark"] .text-slate-500 {
+    color: #a9c0bb;
+}
+
+html[data-theme="dark"] .border-slate-200,
+html[data-theme="dark"] .border-slate-200\/70,
+html[data-theme="dark"] .border-slate-100,
+html[data-theme="dark"] .border-white {
+    border-color: #29403a;
+}
+
+html[data-theme="dark"] .bg-teal-50 {
+    background-color: #153b37;
+}
+
+html[data-theme="dark"] .bg-amber-50\/70 {
+    background-color: #40351b;
+}
+
+html[data-theme="dark"] .bg-rose-50 {
+    background-color: #3b2024;
+}
+
+html[data-theme="dark"] .field {
+    background-color: #182522;
+    color: #e6f2ef;
+}
+
+html[data-theme="dark"] .hover\:bg-slate-50:hover {
+    background-color: #233732;
+}
+
+html[data-theme="dark"] .card {
+    background-color: #182522;
+    border-color: #29403a;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+select {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+input[type="date"],
+input[type="time"] {
+    min-width: 0;
+}
+
+::selection {
+    background: #99f6e4;
+    color: #134e4a;
+}
+
+@layer components {
+    .card {
+        @apply rounded-3xl border border-slate-200/80 bg-white shadow-sm;
+    }
+
+    .btn {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-600 disabled:opacity-50;
+    }
+
+    .btn-primary {
+        @apply bg-teal-700 text-white hover:bg-teal-800;
+    }
+
+    .btn-secondary {
+        @apply border border-slate-200 bg-white text-slate-700 hover:bg-slate-50;
+    }
+
+    .btn-danger {
+        @apply bg-rose-50 text-rose-700 hover:bg-rose-100;
+    }
+
+    .field {
+        @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-4 focus:ring-teal-50;
+    }
+
+    .label {
+        @apply mb-2 block text-sm font-semibold text-slate-700;
+    }
+
+    .eyebrow {
+        @apply text-xs font-bold uppercase tracking-[0.2em] text-teal-700;
+    }
+
+    .muted {
+        @apply text-sm leading-6 text-slate-500;
+    }
+}
+
+.hero-grid {
+    background-image:
+        linear-gradient(to right, rgb(13 148 136 / 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(13 148 136 / 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+}
+
+.hero-glow {
+    background:
+        radial-gradient(ellipse at 80% 25%, #ccfbf1 0%, transparent 48%),
+        radial-gradient(ellipse at 5% 85%, #e0f2fe 0%, transparent 40%);
+}
+
+html[data-theme="dark"] .hero-glow {
+    background:
+        radial-gradient(ellipse at 80% 25%, rgb(13 148 136 / 0.2) 0%, transparent 48%),
+        radial-gradient(ellipse at 5% 85%, rgb(14 116 144 / 0.18) 0%, transparent 40%);
+}
+
+html[data-theme="dark"] .landing-preview {
+    background-color: #183a35;
+}
+
+html[data-theme="dark"] .landing-steps {
+    background-color: #152522;
+}
+
+/* The authenticated workspace uses a cooler, more focused clinical palette. */
+.dashboard-theme {
+    color: #16263d;
+}
+
+.dashboard-theme .bg-white,
+.dashboard-theme .bg-white\/95 {
+    background-color: #ffffff;
+}
+
+.dashboard-theme .bg-slate-50,
+.dashboard-theme .bg-slate-50\/70 {
+    background-color: #f3f6fb;
+}
+
+.dashboard-theme .bg-teal-700 {
+    background-color: #155e75;
+}
+
+.dashboard-theme .hover\:bg-teal-800:hover {
+    background-color: #164e63;
+}
+
+.dashboard-theme .text-teal-700,
+.dashboard-theme .text-teal-600 {
+    color: #0e7490;
+}
+
+.dashboard-theme .text-teal-900 {
+    color: #164e63;
+}
+
+.dashboard-theme .bg-teal-50 {
+    background-color: #e0f2fe;
+}
+
+.dashboard-theme .border-slate-200,
+.dashboard-theme .border-slate-200\/70,
+.dashboard-theme .border-slate-100 {
+    border-color: #dbe4ef;
+}
+
+.dashboard-theme .card {
+    border-color: #dbe4ef;
+    box-shadow: 0 8px 24px rgb(30 64 175 / 0.05);
+}
+
+.dashboard-theme .hover\:bg-slate-50:hover {
+    background-color: #eef4fa;
+}
+
+html[data-theme="dark"] .dashboard-theme {
+    background-color: #0f1c2e;
+    color: #e5edf7;
+}
+
+html[data-theme="dark"] .dashboard-theme .bg-white,
+html[data-theme="dark"] .dashboard-theme .bg-white\/95 {
+    background-color: #17263a;
+}
+
+html[data-theme="dark"] .dashboard-theme .bg-slate-50,
+html[data-theme="dark"] .dashboard-theme .bg-slate-50\/70 {
+    background-color: #122238;
+}
+
+html[data-theme="dark"] .dashboard-theme .text-teal-700,
+html[data-theme="dark"] .dashboard-theme .text-teal-600 {
+    color: #67c7dd;
+}
+
+html[data-theme="dark"] .dashboard-theme .text-teal-900 {
+    color: #b9e7f0;
+}
+
+html[data-theme="dark"] .dashboard-theme .bg-teal-50 {
+    background-color: #173e50;
+}
+
+html[data-theme="dark"] .dashboard-theme .border-slate-200,
+html[data-theme="dark"] .dashboard-theme .border-slate-200\/70,
+html[data-theme="dark"] .dashboard-theme .border-slate-100 {
+    border-color: #29415d;
+}
+
+html[data-theme="dark"] .dashboard-theme .card {
+    background-color: #17263a;
+    border-color: #29415d;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .dashboard-theme .hover\:bg-slate-50:hover {
+    background-color: #203450;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
