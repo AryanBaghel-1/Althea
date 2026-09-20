@@ -71,7 +71,7 @@ export function Records() {
 
     function downloadRecord(record: MedicalRecord) {
         const content = [
-            "CAREFLOW DEMO RECORD",
+            "ALTHEA DEMO RECORD",
             "Not an official medical document.",
             "",
             `Title: ${record.title}`,

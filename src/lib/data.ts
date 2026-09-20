@@ -7,7 +7,7 @@ export const doctors: Doctor[] = [
         specialty: "General Physician",
         initials: "AS",
         experience: 12,
-        location: "CareFlow Central Clinic",
+        location: "Althea Central Clinic",
         color: "bg-teal-100 text-teal-800",
     },
     {
@@ -16,7 +16,7 @@ export const doctors: Doctor[] = [
         specialty: "Cardiologist",
         initials: "RM",
         experience: 15,
-        location: "CareFlow Heart Centre",
+        location: "Althea Heart Centre",
         color: "bg-rose-100 text-rose-800",
     },
     {
@@ -25,7 +25,7 @@ export const doctors: Doctor[] = [
         specialty: "Dermatologist",
         initials: "MI",
         experience: 9,
-        location: "CareFlow Skin Clinic",
+        location: "Althea Skin Clinic",
         color: "bg-violet-100 text-violet-800",
     },
     {
@@ -34,7 +34,7 @@ export const doctors: Doctor[] = [
         specialty: "Orthopedist",
         initials: "KS",
         experience: 11,
-        location: "CareFlow Movement Centre",
+        location: "Althea Movement Centre",
         color: "bg-sky-100 text-sky-800",
     },
     {
@@ -43,7 +43,7 @@ export const doctors: Doctor[] = [
         specialty: "Pediatrician",
         initials: "SK",
         experience: 8,
-        location: "CareFlow Family Clinic",
+        location: "Althea Family Clinic",
         color: "bg-amber-100 text-amber-800",
     },
     {
@@ -52,7 +52,7 @@ export const doctors: Doctor[] = [
         specialty: "Neurologist",
         initials: "AR",
         experience: 14,
-        location: "CareFlow Neuro Centre",
+        location: "Althea Neuro Centre",
         color: "bg-indigo-100 text-indigo-800",
     },
 ];

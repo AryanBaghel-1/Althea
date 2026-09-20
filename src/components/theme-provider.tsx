@@ -9,20 +9,23 @@ type ThemeContextValue = {
     toggleTheme: () => void;
 };
 
-const THEME_KEY = "careflow-theme";
+const THEME_KEY = "althea-theme";
+const LEGACY_THEME_KEY = "careflow-theme";
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getTheme(): Theme {
-    return window.localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+    const storedTheme = window.localStorage.getItem(THEME_KEY) ?? window.localStorage.getItem(LEGACY_THEME_KEY);
+
+    return storedTheme === "dark" ? "dark" : "light";
 }
 
 function subscribeToTheme(callback: () => void) {
     window.addEventListener("storage", callback);
-    window.addEventListener("careflow-theme-change", callback);
+    window.addEventListener("althea-theme-change", callback);
 
     return () => {
         window.removeEventListener("storage", callback);
-        window.removeEventListener("careflow-theme-change", callback);
+        window.removeEventListener("althea-theme-change", callback);
     };
 }
 
@@ -38,7 +41,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
         window.localStorage.setItem(THEME_KEY, nextTheme);
         window.document.documentElement.dataset.theme = nextTheme;
-        window.dispatchEvent(new Event("careflow-theme-change"));
+        window.dispatchEvent(new Event("althea-theme-change"));
     }
 
     return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;

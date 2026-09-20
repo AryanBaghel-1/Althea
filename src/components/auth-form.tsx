@@ -221,7 +221,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
                     </form>
 
                     <p className="mt-7 text-center text-sm text-slate-500">
-                        {isSignup ? "Already have an account?" : "New to CareFlow?"}{" "}
+                        {isSignup ? "Already have an account?" : "New to Althea?"}{" "}
                         <Link href={isSignup ? "/login" : "/signup"} className="font-semibold text-teal-700">
                             {isSignup ? "Log in" : "Create an account"}
                         </Link>

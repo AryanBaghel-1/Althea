@@ -6,7 +6,7 @@ export function Logo({ light = false }: { light?: boolean }) {
     return (
         <Link
             href="/"
-            aria-label="CareFlow home"
+            aria-label="Althea home"
             className={`inline-flex items-center gap-2.5 text-xl font-extrabold tracking-tight ${
                 light ? "text-white" : "text-slate-900"
             }`}
@@ -14,7 +14,7 @@ export function Logo({ light = false }: { light?: boolean }) {
             <span className="rounded-xl bg-teal-700 p-2 text-white">
                 <HeartPulse size={22} aria-hidden="true" />
             </span>
-            CareFlow<span className="text-teal-500">.</span>
+            Althea<span className="text-teal-500">.</span>
         </Link>
     );
 }
@@ -23,7 +23,7 @@ export function LoadingScreen() {
     return (
         <div className="flex min-h-screen items-center justify-center gap-3 bg-slate-50 text-slate-500" role="status">
             <LoaderCircle className="animate-spin" size={22} />
-            Loading CareFlow…
+            Loading Althea…
         </div>
     );
 }

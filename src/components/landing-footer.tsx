@@ -7,7 +7,7 @@ export function LandingFooter() {
             <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
                 <Logo />
                 <p className="max-w-md text-xs leading-6 text-slate-500">
-                    CareFlow is a frontend demo, not a healthcare provider. Do not enter real patient data. For
+                    Althea is a frontend demo, not a healthcare provider. Do not enter real patient data. For
                     emergencies, contact your local emergency services.
                 </p>
                 <Link href="/login" className="text-sm font-semibold text-teal-700">

@@ -1,7 +1,9 @@
 import type { Database } from "./types";
 
-export const DATABASE_KEY = "careflow.database.v1";
-export const SESSION_KEY = "careflow.session.v1";
+export const DATABASE_KEY = "althea.database.v1";
+export const SESSION_KEY = "althea.session.v1";
+const LEGACY_DATABASE_KEY = "careflow.database.v1";
+const LEGACY_SESSION_KEY = "careflow.session.v1";
 
 export function emptyDatabase(): Database {
     return {
@@ -12,7 +14,7 @@ export function emptyDatabase(): Database {
 }
 
 export function readDatabase(): Database {
-    const raw = localStorage.getItem(DATABASE_KEY);
+    const raw = localStorage.getItem(DATABASE_KEY) ?? localStorage.getItem(LEGACY_DATABASE_KEY);
 
     if (!raw) return emptyDatabase();
 
@@ -54,7 +56,7 @@ export function readDatabase(): Database {
 
         return parsed;
     } catch {
-        throw new Error("CareFlow demo storage is unreadable. Clear this site's demo storage to start again.");
+        throw new Error("Althea demo storage is unreadable. Clear this site's demo storage to start again.");
     }
 }
 
@@ -67,7 +69,7 @@ export function writeDatabase(database: Database): void {
 }
 
 export function readSession(): string | null {
-    return localStorage.getItem(SESSION_KEY);
+    return localStorage.getItem(SESSION_KEY) ?? localStorage.getItem(LEGACY_SESSION_KEY);
 }
 
 export function writeSession(userId: string): void {
@@ -80,6 +82,7 @@ export function writeSession(userId: string): void {
 
 export function clearSession(): void {
     localStorage.removeItem(SESSION_KEY);
+    localStorage.removeItem(LEGACY_SESSION_KEY);
 }
 
 function bytesToHex(bytes: Uint8Array): string {

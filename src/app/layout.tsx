@@ -6,8 +6,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: {
-        default: "CareFlow — Your care, beautifully connected",
-        template: "%s | CareFlow",
+        default: "Althea — Your care, beautifully connected",
+        template: "%s | Althea",
     },
     description: "A medical-app frontend demo for appointments, records, and medication reminders.",
 };

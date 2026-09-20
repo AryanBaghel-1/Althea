@@ -58,7 +58,7 @@ const steps = [
 const faqs = [
     {
         question: "Is this a real healthcare service?",
-        answer: "No. CareFlow is a frontend demonstration. Doctors and clinics are fictional, bookings are local demo entries, and no healthcare services are provided.",
+        answer: "No. Althea is a frontend demonstration. Doctors and clinics are fictional, bookings are local demo entries, and no healthcare services are provided.",
     },
     {
         question: "Where is my information stored?",
@@ -69,7 +69,7 @@ const faqs = [
         answer: "No. Browser storage is not suitable for sensitive patient data. Use fictional details and do not reuse an important password.",
     },
     {
-        question: "Does CareFlow send medication notifications?",
+        question: "Does Althea send medication notifications?",
         answer: "This version provides an in-app checklist only. It does not send push notifications, email, or medical advice.",
     },
 ];
