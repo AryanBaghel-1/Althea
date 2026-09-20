@@ -90,3 +90,18 @@ This demo does not provide real medical advice, provider contact, video meeting 
 - Tailwind CSS `4`
 - Lucide React icons
 - ESLint with the Next.js configuration
+
+## Future Plans
+
+The current release is intentionally a frontend-only demo. Planned work includes:
+
+- Integrate a real-time database for appointments, records, medications, and profile data.
+- Add a backend API to centralize business rules, validation, and data access.
+- Replace browser-only accounts with secure server-side authentication, sessions, password recovery, and email verification.
+- Sync data across devices and support real-time updates between active sessions.
+- Add secure file storage for medical documents with access controls and audit history.
+- Introduce opt-in notifications for appointments and reminders.
+- Add provider workflows, availability management, and real appointment integrations.
+- Complete the privacy, security, compliance, monitoring, and backup work required before handling real patient information.
+
+These capabilities are not implemented yet. Until they are available, Althea should remain a fictional-data demonstration.
